@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="2" align="center">  
+        <style>
+            table{
+                background-color: rgb(255, 195, 127);
+                margin: auto;
+            }
+        </style>
+        <u><h1 style="text-align: center;">BOOK DETAILS</h1></u>
+        <tr>
+        
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publication Year</th>
+            <th>Genre</th>
+            <th>View</th>
+     
+       </tr>
+    {%for book in data%}
+
+    <tr>
+        <style>
+            table{
+                text-align: center;
+            }
+        </style>
+    <td>{{book.title}}</td>
+    <td>{{book.author}}</td>
+    <td>{{book.publication_year}}</td>
+    <td>{{book.genre}}</td>
+    <td>
+        <a href="{% url 'book-det' book.id %}">Link</a>
+        </td>
+        <td>
+        <a href="{% url 'book-del' book.id %}">Delete</a>
+    </td>
+    </tr>
+    {%endfor%}
+</tr>
+</table>  
+</body>
+</html>

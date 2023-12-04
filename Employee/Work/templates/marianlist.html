@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css">		
+        .table tr.fit,
+        .table td.fit, 
+        .table th.fit {
+        white-space: nowrap;
+        width: 1%;
+    }
+    </style>
+    <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Hostel</th>
+           
+      
+          </tr>
+        </thead>
+        <tbody>
+          {%for i in data%}
+          <tr>
+          
+            <td>{{i.name}}</td>
+            
+            <td >{{i.department}}</td>
+           
+            <td>{{i.hostel}}</td>
+      
+          {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="2" align="center">  
+        <style>
+            table{
+                background-color: rgb(255, 195, 127);
+                margin: auto;
+            }
+        </style>
+        <u><h1 style="text-align: center;">STUDENTS ETAILS</h1></u>
+        <tr>
+        
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Place</th>
+            <th>View</th>
+            <th>Delete</th>
+     
+       </tr>
+    {%for std in data%}
+
+    <tr>
+        <style>
+            table{
+                text-align: center;
+            }
+        </style>
+    <td>{{std.name}}</td>
+    <td>{{std.age}}</td>
+    <td>{{std.course}}</td>
+    <td>{{std.gender}}</td>
+    <td>{{std.place}}</td>
+    
+    <td>
+        <a href="{% url 'std-det' std.id %}">Link</a>
+        </td>
+        <td>
+         <a href="{% url 'std-del' std.id %}">Delete</a> 
+    </td>
+    </tr>
+    {%endfor%}
+</tr>
+</table>  
+</body>
+</html>
